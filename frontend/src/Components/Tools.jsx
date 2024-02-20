@@ -64,7 +64,7 @@ export const Tools = ({setUsers, users,err,setErr,seed,setSeed,loc,setLoc}) => {
     <Form.Label>Errors:</Form.Label>
       <Form.Range 
         min={0}
-        max={1000}
+        max={10}
         step={0.25}
         value={err}
         onChange={handlerRangeChange}
