@@ -7,7 +7,7 @@ export const Tools = ({setUsers, users,err,setErr,seed,setSeed,loc,setLoc}) => {
 
   useEffect(()=>{
     const timeout = setTimeout(async()=>{
-      let res = await axios.get(`http://localhost:5000/?page=1&loc=${loc}&err=${err}&seed=${seed}`)
+      let res = await axios.get(`https://itask5.onrender.com/?page=1&loc=${loc}&err=${err}&seed=${seed}`)
       if(res.status == 200){
         setUsers(res.data)
       }

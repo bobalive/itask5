@@ -16,13 +16,13 @@ function App() {
 
   const getUsers = async()=>{
     if(!users){
-      let res = await axios.get(`http://localhost:5000/?page=${page}&loc=${loc}&err=${err}&seed=${seed}`)
+      let res = await axios.get(`https://itask5.onrender.com/?page=${page}&loc=${loc}&err=${err}&seed=${seed}`)
       if(res.status == 200){
         setUsers(res.data)
       }
     }else if(isPageScrolled){
       page++
-      let res = await axios.get(`http://localhost:5000/?page=${page}&loc=${loc}&err=${err}&seed=${seed}`)
+      let res = await axios.get(`https://itask5.onrender.com/?page=${page}&loc=${loc}&err=${err}&seed=${seed}`)
       if(res.status == 200){
         setUsers([ ...users, ...res.data ])
       }
