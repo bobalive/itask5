@@ -12,20 +12,20 @@ function App() {
   const [loc,setLoc] = useState('ger')
   const isPageScrolled = useIsScrolled()
 
-  let page = 1
+  const [page,setPage]= useState(0)
 
   const getUsers = async()=>{
     if(!users){
-      let res = await axios.get(`https://itask5.onrender.com/?page=${page}&loc=${loc}&err=${err}&seed=${seed}`)
+      let res = await axios.get(`https://itask5.onrender.com/?&loc=${loc}&err=${err}&seed=${seed}`)
       if(res.status == 200){
         setUsers(res.data)
       }
     }else if(isPageScrolled){
-      page++
-      let res = await axios.get(`https://itask5.onrender.com/?page=${page}&loc=${loc}&err=${err}&seed=${seed}`)
+      let res = await axios.get(`https://itask5.onrender.com/?page=${page+2}&loc=${loc}&err=${err}&seed=${seed}`)
       if(res.status == 200){
         setUsers([ ...users, ...res.data ])
       }
+      setPage(page+1)
     } 
 
     

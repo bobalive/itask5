@@ -3,7 +3,7 @@ import Rand from '../assets/shuffle-solid.svg'
 import { Form } from 'react-bootstrap'
 import axios from 'axios';
 
-export const Tools = ({setUsers, users,err,setErr,seed,setSeed,loc,setLoc}) => {
+export const Tools = ({setUsers, users,err,setErr,seed,setSeed,loc,setLoc , page}) => {
 
   useEffect(()=>{
     const timeout = setTimeout(async()=>{

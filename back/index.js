@@ -14,12 +14,11 @@ app.listen(PORT,()=>{
 })
 
 
-const makeRand = (name,location)=>{
 
-}
 
-const createRandomUser = (seed , location , count , err)=>{
 
+const createRandomUser = (seed , location , count , err, page)=>{
+    console.log('bob');
     let formats = []
     switch (location){
         case "ger":
@@ -169,7 +168,7 @@ const createRandomUser = (seed , location , count , err)=>{
 
  
     app.get('/', (req, res) => {
-        const { page = 1, loc = 'uk', err = 0,seed = 0 } = req.query;
+        const { page , loc, err ,seed} = req.query;
         const users = createRandomUser(parseInt(seed) + parseInt(page), loc, 20 , err);
         res.json(users);
       });
